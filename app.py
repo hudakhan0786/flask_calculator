@@ -22,11 +22,11 @@ def calculator():
 
         elif operation == '/':
             if num2 != 0:
-                result = num1 / num2
+                result = round(num1 / num2 , 2)
             else:
                 result = "Cannot divide by zero"
 
     return render_template('index.html', result=result)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True) 
