@@ -13,9 +13,10 @@
 
         <h1>Calculator</h1>
 
-        <form method="POST">
+        <form method="POST" id="calculatorForm">
 
-            <input type="number" step="any"
+            <input type="number"
+                   step="any"
                    name="num1"
                    placeholder="First Number"
                    required>
@@ -25,9 +26,11 @@
                 <option value="-">−</option>
                 <option value="*">×</option>
                 <option value="/">÷</option>
+                <option value="//">//</option>
             </select>
 
-            <input type="number" step="any"
+            <input type="number"
+                   step="any"
                    name="num2"
                    placeholder="Second Number"
                    required>
@@ -41,6 +44,15 @@
         {% endif %}
 
     </div>
+
+    <script>
+        document.addEventListener("keydown", function(event) {
+            if (event.key === "Enter") {
+                event.preventDefault();
+                document.getElementById("calculatorForm").submit();
+            }
+        });
+    </script>
 
 </body>
 </html>
